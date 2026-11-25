@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": [
+    "event_id",
+    "user_id",
+    "event_type",
+    "timestamp",
+    "device"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique ID per event (useful for deduplication in Silver)"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Links events to a user"
+    },
+    "event_type": {
+      "type": "string",
+      "description": "What happened (e.g. click, screen_view, app_open, purchase, signup, login, scroll, share)"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 format"
+    },
+    "device": {
+      "type": "string",
+      "enum": ["Android", "iOS"],
+      "description": "Restricted by an enum"
+    },
+    "screen": {
+      "type": ["string", "null"],
+      "description": "Optional, which screen the event happened on"
+    }
+  },
+  "additionalProperties": false
+}
